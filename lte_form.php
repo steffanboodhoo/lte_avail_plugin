@@ -10,7 +10,7 @@ Author URI: http://bmobile.co.tt
 
 include 'extract_body.php';
 
-function java_init(){
+function lte_form_script_init(){
 	wp_register_script('lte-avail-checker', plugin_dir_url(__FILE__).'index.js', array('jquery'));
     wp_enqueue_script('lte-avail-checker');
 }
@@ -23,6 +23,6 @@ function lte_form_create(){
 }
 
 add_shortcode( 'lte_form_code', 'lte_form_create' );
-add_action('wp_enqueue_scripts','java_init');
+add_action('wp_enqueue_scripts','lte_form_script_init');
 
 ?>
