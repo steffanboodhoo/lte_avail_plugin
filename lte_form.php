@@ -8,7 +8,7 @@ Author: Justin Ali, Steffan Boodhoo and James Thomas
 Author URI: http://bmobile.co.tt
 */
 
-include 'extract_body.php';
+// include 'extract_body.php';
 
 function lte_form_script_init(){
 	wp_register_script('lte-avail-checker', plugin_dir_url(__FILE__).'index.js', array('jquery'));
