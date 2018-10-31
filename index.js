@@ -1,4 +1,4 @@
-window.onload = () => {
+jQuery(document).ready( ($) => {
 	
 	$('#submit').click((ev)=>{
 		ev.preventDefault();
@@ -15,7 +15,7 @@ window.onload = () => {
 			type:'POST',
 			data:JSON.stringify(data),
 			headers: {'Content-Type':'application/json'},
-			url:'http://localhost/test/',
+			url:'https://localhost/test/',
 			success:(resp)=>{
 				let data = JSON.parse(resp)
 				console.log(data);
@@ -38,4 +38,4 @@ window.onload = () => {
 		
 	}
 	// $('msisdn').
-}
+});

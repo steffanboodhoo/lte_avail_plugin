@@ -11,8 +11,8 @@ Author URI: http://bmobile.co.tt
 include 'extract_body.php';
 
 function java_init(){
-    wp_register_script('stream-api', plugin_dir_url( __FILE__ ) . 'index.js','','1.2', true);
-    wp_enqueue_script('stream-api');
+	wp_register_script('lte-avail-checker', plugin_dir_url(__FILE__).'index.js', array('jquery'));
+    wp_enqueue_script('lte-avail-checker');
 }
 
 function lte_form_create(){
