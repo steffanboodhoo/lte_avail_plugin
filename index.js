@@ -33,7 +33,7 @@ jQuery(document).ready( ($) => {
 	
 	const DISPLAY_OPTIONS_MAP = {
 		device_capability:{name:'Device LTE Capability',present:0},
-		device_name:{name:'Device Model', present:0},
+		device_name:{name:'Device Model', present:1},
 		message:{name:'', present:1},
 		sim_capability:{name:'Sim LTE Capability',present:0}
 	}
