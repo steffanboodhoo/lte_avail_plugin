@@ -1,12 +1,14 @@
 jQuery(document).ready( ($) => {
-	
-	$('#submit').click((ev)=>{
+	const URL = 'https://10.85.18.178/test/';
+	// const URL = 'http://localhost:3000';
+	$('#lte_submit').click((ev)=>{
 		ev.preventDefault();
 		console.log('clickty');
-		submit($('#msisdn').val())
+		submit($('#lte_msisdn').val())
 	});
-	const submit = (msisdn)=>{
-		
+
+
+	const submit = (msisdn)=>{		
 		const data = {msisdn};
 		// const data = {msisdn:'18684735902'};
 		console.log(data)
@@ -15,7 +17,7 @@ jQuery(document).ready( ($) => {
 			type:'POST',
 			data:JSON.stringify(data),
 			headers: {'Content-Type':'application/json'},
-			url:'https://10.85.18.178/test/',
+			url:URL,
 			success:(resp)=>{
 				console.log(resp);
 				let data = JSON.parse(resp)
@@ -30,11 +32,19 @@ jQuery(document).ready( ($) => {
 			}
 		});
 	}
-
+	
+	const DISPLAY_OPTIONS_MAP = {
+		device_capability:{name:'Device LTE Capability',present:1},
+		device_name:{name:'Device Model', present:1},
+		message:{name:'Message', present:1},
+		sim_capability:{name:'Sim LTE Capability',present:1}
+	}
 	const update = (data) => {
 		console.log(data);
 		for(let key in data){
-			$('<div>',{class:'col-sm-3'}).append(`<br>${key}:</br> \t${data[key]}`).appendTo('#lte_output');	
+			$('#lte_output').append( 
+				( DISPLAY_OPTIONS_MAP[key].present==1 ? $('<div>',{class:'col-sm-3'}).append(`<br>${DISPLAY_OPTIONS_MAP[key].name}:</br> \t${data[key]}`) :'' )
+			);
 		}
 		
 	}
