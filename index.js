@@ -34,16 +34,16 @@ jQuery(document).ready( ($) => {
 	}
 	
 	const DISPLAY_OPTIONS_MAP = {
-		device_capability:{name:'Device LTE Capability',present:1},
-		device_name:{name:'Device Model', present:1},
-		message:{name:'Message', present:1},
-		sim_capability:{name:'Sim LTE Capability',present:1}
+		device_capability:{name:'Device LTE Capability',present:0},
+		device_name:{name:'Device Model', present:0},
+		message:{name:'', present:1},
+		sim_capability:{name:'Sim LTE Capability',present:0}
 	}
 	const update = (data) => {
 		console.log(data);
 		for(let key in data){
 			$('#lte_output').append( 
-				( DISPLAY_OPTIONS_MAP[key].present==1 ? $('<div>',{class:'col-sm-3'}).append(`<br>${DISPLAY_OPTIONS_MAP[key].name}:</br> \t${data[key]}`) :'' )
+				( DISPLAY_OPTIONS_MAP[key].present==1 ? $('<div>',{class:'col-sm'}).append(`<br>${DISPLAY_OPTIONS_MAP[key].name}</br> \t${data[key]}`) :'' )
 			);
 		}
 		

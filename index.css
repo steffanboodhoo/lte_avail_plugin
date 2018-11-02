@@ -27,3 +27,15 @@ col-sm-3col-sm-3col-sm-3col-sm-3col-sm-3.container {
 #message {
 	font-size: 12pt;
 }
+
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield !important;
+}
