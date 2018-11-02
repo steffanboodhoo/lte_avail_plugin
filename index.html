@@ -5,25 +5,34 @@
 </head>
 <body>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="/wp-content/plugins/lte_avail_plugin/index.css">
 
-	<div class='container flex-container'>
+	<div id='lteformchecker' class='flex-container'>
 		<div class='row'>
-			<!-- <div class='card'> -->
-			<div class='flex-container'>
-				<div class='row'><p>Please Enter your msisdn '1868xxxxxxx'</p></div>
-				<div class='row'><input type="number" name="msisdn" id="msisdn"/></div>
-				<div class='row'><button type="button" class="btn btn-outline-info btn-block" id='submit'>submit</button></div>
+			<div id='bggreen' class='col-sm-3'></div>
+				<div id='titlerow' class='col-sm-6'>Please Enter your Mobile Phone Number
+					<div class='row'>
+							<div class='col-sm-3'></div>
+							<div class='col-sm-6'><input type="number" name="msisdn" id="msisdn" placeholder="e.g - 1868000000"/>
+								<button type="button" class="btn btn-success" id='submit'>Submit</button>
+							
+						</div>
+							<div class='col-sm-3'></div>
+					</div>	
+					<div id='message' class='row'>
+								<div class='container' id="lte_output">
+
+								</div>
+							</div>
 			</div>
-			<!-- </div>			 -->
-		</div>
+			<div id='bggreen' class='col-sm-3'></div>
 			
-		<div class='row'>
-			<div class='flex-container' id="lte_output">
-				
-			</div>
-		</div>
+			<!-- <div class='card'> -->
+								
+			<!-- </div>			 -->			
 		
+		
+	</div>
 	</div>
 	<!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">

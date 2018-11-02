@@ -15,8 +15,9 @@ jQuery(document).ready( ($) => {
 			type:'POST',
 			data:JSON.stringify(data),
 			headers: {'Content-Type':'application/json'},
-			url:'https://localhost/test/',
+			url:'https://10.85.18.178/test/',
 			success:(resp)=>{
+				console.log(resp);
 				let data = JSON.parse(resp)
 				console.log(data);
 				if(data['device_capability'] === undefined){
@@ -33,7 +34,7 @@ jQuery(document).ready( ($) => {
 	const update = (data) => {
 		console.log(data);
 		for(let key in data){
-			$('<div>',{class:'row'}).append(`<br>${key}:</br> \t${data[key]}`).appendTo('#lte_output');	
+			$('<div>',{class:'col-sm-3'}).append(`<br>${key}:</br> \t${data[key]}`).appendTo('#lte_output');	
 		}
 		
 	}
