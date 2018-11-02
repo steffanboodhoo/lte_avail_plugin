@@ -21,13 +21,11 @@ jQuery(document).ready( ($) => {
 			success:(resp)=>{
 				console.log(resp);
 				let data = JSON.parse(resp)
-				console.log(data);
+				$('#lte_output').empty();
 				if(data['device_capability'] === undefined){
-					$('#modal_body').append(data['message'])
-				}else{
-					$('#exampleModal').modal('hide');
-					// $('#lte_output').empty().append(resp);
-					update(data);
+					update_failure(data);
+				}else{				
+					update_success(data);
 				}
 			}
 		});
@@ -35,11 +33,12 @@ jQuery(document).ready( ($) => {
 	
 	const DISPLAY_OPTIONS_MAP = {
 		device_capability:{name:'Device LTE Capability',present:0},
-		device_name:{name:'Device Model', present:1},
+		device_name:{name:'Device Model', present:0},
 		message:{name:'', present:1},
 		sim_capability:{name:'Sim LTE Capability',present:0}
 	}
-	const update = (data) => {
+	const update_success = (data) => {
+		$('#exampleModal').modal('hide');
 		console.log(data);
 		for(let key in data){
 			$('#lte_output').append( 
@@ -47,6 +46,11 @@ jQuery(document).ready( ($) => {
 			);
 		}
 		
+	}
+
+	const update_failure = (data) =>{
+		$('#lte_output').append(data['message']);
+		setTimeout(()=>$('#exampleModal').modal('hide'),500);
 	}
 	// $('msisdn').
 });
