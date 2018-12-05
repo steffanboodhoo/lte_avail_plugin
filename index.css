@@ -11,21 +11,29 @@ col-sm-3col-sm-3col-sm-3col-sm-3col-sm-3.container {
 	color: #D7D7D7;
 }
 
-
 #titlerow {
-	border-width: 3px;
-	border-style: groove;
-	border-color: #DFDFDF; 
+	background: #fff;
+	padding: 40px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #D7D7D7;
+	border-radius: 10px;
 	text-align: center;
 	font-size: 20pt;
+/*	box-shadow: 10px 10px 26px -10px rgba(0,0,0,0.75);*/
+}
+
+#inputarea {
+	padding: 10px 0;
 }
 
 #lte_output {
 	padding-bottom: 20px;
 }
 
+
 #bggreen {
-	background-color: #DFDFDF;
+	background-color: #f2f2f1;
 }
 
 #message {
