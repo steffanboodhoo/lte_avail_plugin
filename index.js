@@ -1,5 +1,5 @@
 jQuery(document).ready( ($) => {
-	const URL = 'https://10.85.18.178/test/';
+	const URL = 'https://dev.bmobile.co.tt/test/';
 	// const URL = 'http://localhost:3000';
 	$('#lte_submit').click((ev)=>{
 		ev.preventDefault();
