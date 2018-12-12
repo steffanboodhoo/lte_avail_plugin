@@ -1,7 +1,7 @@
 <?php
 function lte_checker_extract_body(){
 	$body_text = '';
-	if($fh = fopen('/home/webappusr/public_html/wp-content/plugins/lte_avail_plugin/index.html','r')){
+	if($fh = fopen('./index.html','r')){
 		// $filtered = [];
 		$body_flag = 0;
 		while(!feof($fh)){
